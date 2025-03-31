@@ -3877,6 +3877,9 @@ details.collapse summary::-webkit-details-marker {
 .mb-5 {
   margin-bottom: 1.25rem;
 }
+.mb-8 {
+  margin-bottom: 2rem;
+}
 .mb-\[10px\] {
   margin-bottom: 10px;
 }
@@ -3894,6 +3897,9 @@ details.collapse summary::-webkit-details-marker {
 }
 .mr-3 {
   margin-right: 0.75rem;
+}
+.mr-auto {
+  margin-right: auto;
 }
 .mt-1 {
   margin-top: 0.25rem;
@@ -4216,6 +4222,9 @@ details.collapse summary::-webkit-details-marker {
 .max-w-\[104px\] {
   max-width: 104px;
 }
+.max-w-\[1050px\] {
+  max-width: 1050px;
+}
 .max-w-\[1140px\] {
   max-width: 1140px;
 }
@@ -4252,6 +4261,9 @@ details.collapse summary::-webkit-details-marker {
 .max-w-\[420px\] {
   max-width: 420px;
 }
+.max-w-\[464px\] {
+  max-width: 464px;
+}
 .max-w-\[480px\] {
   max-width: 480px;
 }
@@ -4263,6 +4275,9 @@ details.collapse summary::-webkit-details-marker {
 }
 .max-w-\[640px\] {
   max-width: 640px;
+}
+.max-w-\[660px\] {
+  max-width: 660px;
 }
 .max-w-\[80px\] {
   max-width: 80px;
@@ -4972,6 +4987,9 @@ details.collapse summary::-webkit-details-marker {
 .text-\[18px\] {
   font-size: 18px;
 }
+.text-\[20px\] {
+  font-size: 20px;
+}
 .text-\[24px\] {
   font-size: 24px;
 }
@@ -5081,6 +5099,9 @@ details.collapse summary::-webkit-details-marker {
 .leading-\[20px\] {
   line-height: 20px;
 }
+.leading-\[22\.4px\] {
+  line-height: 22.4px;
+}
 .leading-\[22px\] {
   line-height: 22px;
 }
@@ -5108,6 +5129,10 @@ details.collapse summary::-webkit-details-marker {
 .text-\[\#667781\] {
   --tw-text-opacity: 1;
   color: rgb(102 119 129 / var(--tw-text-opacity));
+}
+.text-\[\#716D6E\] {
+  --tw-text-opacity: 1;
+  color: rgb(113 109 110 / var(--tw-text-opacity));
 }
 .text-\[\#716d6e\] {
   --tw-text-opacity: 1;
@@ -5640,6 +5665,10 @@ details.collapse summary::-webkit-details-marker {
   background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity)));
 }
 
+.hover\:bg-opacity-80:hover {
+  --tw-bg-opacity: 0.8;
+}
+
 .hover\:bg-gradient-to-r:hover {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -5991,6 +6020,11 @@ details.collapse summary::-webkit-details-marker {
     padding-right: 2.5rem;
   }
 
+  .sm\:px-\[60px\] {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
   .sm\:py-10 {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
@@ -6305,6 +6339,18 @@ details.collapse summary::-webkit-details-marker {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.\[\&\>h3\]\:text-\[14px\]>h3 {
+  font-size: 14px;
+}
+
+.\[\&\>h3\]\:font-bold>h3 {
+  font-weight: 700;
+}
+
+.\[\&\>p\]\:\[margin\:12px_0_35px\]>p {
+  margin: 12px 0 35px;
 }
 
 .\[\&_section\]\:contents section {

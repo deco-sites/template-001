@@ -2,84 +2,88 @@
   "__resolveType": "site/sections/Footer/Footer.tsx",
   "links": [
     {
-      "title": "Our Company",
-      "children": [
-        {
-          "title": "About us",
-          "href": "#"
-        },
-        {
-          "title": "Our blog",
-          "href": "#"
-        },
-        {
-          "title": "Stores",
-          "href": "#"
-        },
-        {
-          "title": "Work with us",
-          "href": "#"
-        }
-      ],
-      "href": "#"
-    },
-    {
-      "title": "Orders & Purchases",
+      "title": "A Shoulder",
       "href": "#",
       "children": [
         {
-          "title": "Check order status",
+          "title": "Quem somos",
           "href": "#"
         },
         {
-          "title": "Return and exchanges",
+          "title": "Nossas lojas",
           "href": "#"
         },
         {
-          "title": "Product retail",
+          "title": "Multimarcas",
           "href": "#"
         },
         {
-          "title": "Gift cards",
+          "title": "Sustentabilidade",
+          "href": "#"
+        },
+        {
+          "title": "Como cuidar",
+          "href": "#"
+        },
+        {
+          "title": "Blog",
           "href": "#"
         }
       ]
     },
     {
-      "title": "Support & Services",
+      "title": "Ajuda",
       "href": "#",
       "children": [
         {
-          "title": "Support Center",
+          "title": "Tems de atendimento",
           "href": "#"
         },
         {
-          "title": "Schedule a service",
+          "title": "Trocas e devoluções",
           "href": "#"
         },
         {
-          "title": "Contact us",
+          "title": "Perguntas frequentes",
+          "href": "#"
+        },
+        {
+          "title": "Cashback",
+          "href": "#"
+        },
+        {
+          "title": "Trabalhe conosco",
           "href": "#"
         }
       ]
     },
     {
-      "title": "Support & Services",
+      "title": "Transparência",
+      "href": "#",
       "children": [
         {
-          "title": "Support Center",
+          "title": "Regulamento e promoções",
           "href": "#"
         },
         {
-          "title": "Schedule a service",
-          "href": "#"
-        },
-        {
-          "title": "Contact us",
+          "title": "Política de privacidade",
           "href": "#"
         }
-      ],
-      "href": "#"
+      ]
+    },
+    {
+      "title": "Baixe o app",
+      "href": "#",
+      "children": [
+        {
+          "title": "App Store",
+          "href": "#"
+        },
+        {
+          "title": "Google Play",
+          "href": "#"
+        }
+      ]
     }
   ],
   "social": [
@@ -162,6 +166,10 @@
       "href": "#"
     }
   ],
-  "logo": "https://assets.decocache.com/storefront/5453831b-a609-4249-af38-e385a2cb4e7f/1742560260738-f1faab73-e4ff-4037-b7c4-5d02bd0b1209",
-  "trademark": "TM & © 2023 Deco Storefront, Inc."
+  "logo": "https://assets.decocache.com/template-001/1a3598e0-c0ad-4e7e-8a49-5ab7259fff0e/logo_meteorite.svg",
+  "trademark": "TM & © 2023 Deco Storefront, Inc.",
+  "secondSection": {
+    "text": "<h3 class='vtex-rich-text-0-x-heading vtex-rich-text-0-x-heading--content-1 t-heading-3 vtex-rich-text-0-x-headingLevel3 vtex-rich-text-0-x-headingLevel3--content-1 vtex-rich-text-0-x-heading-level-3'>blusas para todos os estilos</h3><p class='lh-copy vtex-rich-text-0-x-paragraph vtex-rich-text-0-x-paragraph--content-1'>entre os&nbsp;<span class='b vtex-rich-text-0-x-strong vtex-rich-text-0-x-strong--content-1'>lançamentos de roupas femininas</span>&nbsp;, as blusas podem ser usadas em diferentes situações do dia a dia. elas são ótimas opções para quem busca um look casual, já que combinam com calças jeans, shorts e saias.</p><p class='lh-copy vtex-rich-text-0-x-paragraph vtex-rich-text-0-x-paragraph--content-1'>elas também são excelentes para diferentes ambientes, desde o escritório ao parque. para adequá-las ao local, basta escolher a modelagem! as&nbsp;<span class='b vtex-rich-text-0-x-strong vtex-rich-text-0-x-strong--content-1'>regatas femininas</span>, por exemplo, são ideais para compromissos espontâneos em dias quentes, como um almoço em família.</p><h3 class='vtex-rich-text-0-x-heading vtex-rich-text-0-x-heading--content-1 t-heading-3 vtex-rich-text-0-x-headingLevel3 vtex-rich-text-0-x-headingLevel3--content-1 vtex-rich-text-0-x-heading-level-3'>calças para todos os looks</h3><p class='lh-copy vtex-rich-text-0-x-paragraph vtex-rich-text-0-x-paragraph--content-1'>as calças estão entre os lançamentos de roupas mais populares por serem fundamentais no dia a dia. em diferentes modelagens, é possível escolher uma para cada ocasião. a calça alfaiatada é ideal para o trabalho, enquanto a de couro e a jeans são usadas, principalmente, na moda casual.</p><p class='lh-copy vtex-rich-text-0-x-paragraph vtex-rich-text-0-x-paragraph--content-1'>para adequá-las ao estilo pessoal, combine com outras peças do nosso site, como&nbsp;<a class='vtex-rich-text-0-x-link vtex-rich-text-0-x-link--content-1' href='https://www.shoulder.com.br/colecao/blusas' data-mce-href='https://www.shoulder.com.br/colecao/blusas'>blusas</a>, camisas, camisetas e jaquetas.</p><p class='lh-copy vtex-rich-text-0-x-paragraph vtex-rich-text-0-x-paragraph--content-1'>por serem versáteis, elas permitem várias combinações e se tornam curingas no guarda-roupa, acompanhando você do trabalho aos compromissos cotidianos, com muito conforto.</p><h3 class='vtex-rich-text-0-x-heading vtex-rich-text-0-x-heading--content-1 t-heading-3 vtex-rich-text-0-x-headingLevel3 vtex-rich-text-0-x-headingLevel3--content-1 vtex-rich-text-0-x-heading-level-3'>vestidos de diferentes caimentos</h3><p class='lh-copy vtex-rich-text-0-x-paragraph vtex-rich-text-0-x-paragraph--content-1'>curtos, midi ou longos, os vestidos se adaptam com facilidade ao dia a dia, independente do clima. nos períodos mais quentes, um modelo de tecido respirável é a melhor opção. já as peças com corte reto são ótimas para as composições focadas em&nbsp;<span class='b vtex-rich-text-0-x-strong vtex-rich-text-0-x-strong--content-1'>roupa social feminina</span>.</p><p class='lh-copy vtex-rich-text-0-x-paragraph vtex-rich-text-0-x-paragraph--content-1'>ao combiná-las com outros itens do nosso site, você eleva a elegância do seu look com&nbsp;<a class='vtex-rich-text-0-x-link vtex-rich-text-0-x-link--content-1' href='https://www.shoulder.com.br/colecao/vestidos' data-mce-href='https://www.shoulder.com.br/colecao/vestidos'>vestido</a>. cintos, conjuntos de colares, brincos e lenços são essenciais para adicionar sofisticação ao dia a dia. as terceiras peças, como jaquetas e cardigans, não ficam de fora e ampliam o conforto.</p><h3 class='vtex-rich-text-0-x-heading vtex-rich-text-0-x-heading--content-1 t-heading-3 vtex-rich-text-0-x-headingLevel3 vtex-rich-text-0-x-headingLevel3--content-1 vtex-rich-text-0-x-heading-level-3'>conjuntos para looks práticos</h3><p class='lh-copy vtex-rich-text-0-x-paragraph vtex-rich-text-0-x-paragraph--content-1'>se você está em busca de lançamentos de roupas fáceis de vestir, considere os conjuntos. eles economizam tempo ao escolher um look, vantagem para o dia a dia de trabalho e demais tarefas domésticas. você ainda pode trocar uma das peças por outra e personalizar a composição.</p>",
+    "text2": "<p class='lh-copy vtex-rich-text-0-x-paragraph vtex-rich-text-0-x-paragraph--content-2'>em nossa loja, você monta conjuntos pelo tecido e pela tonalidade, combinando&nbsp;<a class='vtex-rich-text-0-x-link vtex-rich-text-0-x-link--content-2' href='https://www.shoulder.com.br/colecao/calcas' data-mce-href='https://www.shoulder.com.br/colecao/calcas'>calças</a>&nbsp;ou saias com blusas, camisas e blazers. são diferentes possibilidades para o seu estilo e as suas preferências, desde peças lisas ou até com estampas exclusivas.</p><h3 class='vtex-rich-text-0-x-heading vtex-rich-text-0-x-heading--content-2 t-heading-3 vtex-rich-text-0-x-headingLevel3 vtex-rich-text-0-x-headingLevel3--content-2 vtex-rich-text-0-x-heading-level-3'>saias e shorts para movimentos livres</h3><p class='lh-copy vtex-rich-text-0-x-paragraph vtex-rich-text-0-x-paragraph--content-2'>por mais que muita gente pense que saias e shorts são usados apenas no verão, eles podem ser peças-chave de looks para dias amenos e frios. o segredo está na combinação com outras roupas, como meia-calça e casaco no inverno, e blusa ou camisa no outono.</p><p class='lh-copy vtex-rich-text-0-x-paragraph vtex-rich-text-0-x-paragraph--content-2'>com comprimentos e alturas variados, esses&nbsp;<span class='b vtex-rich-text-0-x-strong vtex-rich-text-0-x-strong--content-2'>lançamentos</span>&nbsp;se adaptam facilmente ao seu cotidiano. as modelagens e os tecidos completam as opções para seu guarda-roupa. o caimento alfaiatado é um clássico não apenas nos ambientes corporativos, mas no dia a dia, trazendo elegância.</p><h3 class='vtex-rich-text-0-x-heading vtex-rich-text-0-x-heading--content-2 t-heading-3 vtex-rich-text-0-x-headingLevel3 vtex-rich-text-0-x-headingLevel3--content-2 vtex-rich-text-0-x-heading-level-3'>terceiras peças para finalizar os looks</h3><p class='lh-copy vtex-rich-text-0-x-paragraph vtex-rich-text-0-x-paragraph--content-2'>provavelmente, você já montou um look, mas sentiu que algo estava faltando. o que poderia ajudar era uma terceira peça, como uma jaqueta, um casaco, um cardigã ou um&nbsp;<a class='vtex-rich-text-0-x-link vtex-rich-text-0-x-link--content-2' href='https://www.shoulder.com.br/colecao/blazers' data-mce-href='https://www.shoulder.com.br/colecao/blazers'>blazer</a>. elas são feitas em diferentes tecidos duráveis e confortáveis ao toque, para acompanhar seus compromissos ao longo dos anos.</p><p class='lh-copy vtex-rich-text-0-x-paragraph vtex-rich-text-0-x-paragraph--content-2'>a cada lançamento, novas tonalidades, estampas e modelagens são apresentadas para você escolher opções que surpreendem por onde passar. as peças são pensadas na facilidade de uso, considerando as tendências da moda, como as variações de couro no inverno e o linho no verão.</p><h3 class='vtex-rich-text-0-x-heading vtex-rich-text-0-x-heading--content-2 t-heading-3 vtex-rich-text-0-x-headingLevel3 vtex-rich-text-0-x-headingLevel3--content-2 vtex-rich-text-0-x-heading-level-3'>acessórios que elevam sua elegância</h3><p class='lh-copy vtex-rich-text-0-x-paragraph vtex-rich-text-0-x-paragraph--content-2'>os&nbsp;<a class='vtex-rich-text-0-x-link vtex-rich-text-0-x-link--content-2' href='https://www.shoulder.com.br/acessorios/moda' data-mce-href='https://www.shoulder.com.br/acessorios/moda'>acessórios</a>&nbsp;transformam e adicionam um toque pessoal aos looks. colares, brincos e pulseiras são indispensáveis para acrescentar contraste, em tons de prata e dourado, com ou sem textura, pedras e pingentes.</p><p class='lh-copy vtex-rich-text-0-x-paragraph vtex-rich-text-0-x-paragraph--content-2'>as bolsas são ideais para transportar objetos pessoais e documentos importantes. a escolha fica por conta do tamanho mais adequado para os itens que você pretende levar, da tonalidade, da textura, do material e do design, com formatos variados.</p>"
+  }
 }

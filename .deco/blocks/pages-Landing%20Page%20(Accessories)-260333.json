@@ -1,0 +1,21 @@
+"faqSection": {
+  "title": "faq",
+  "questions": [
+    {
+      "question": "quais são as opções de troca para os lançamentos da shoulder?",
+      "answer": "oferecemos trocas gratuitas para produtos que não atenderem às expectativas. se você precisar desse serviço, por favor, entre em contato conosco e poderemos ajudar."
+    },
+    {
+      "question": "qual é o prazo de entrega dos produtos lançados pela shoulder?",
+      "answer": "<p>trabalhamos com diferentes tipos de entrega para atender às necessidades das nossas clientes: a urgente acontece em até 3h após o faturamento, a expressa acontece no dia após o pedido ser faturado e a normal tem prazo padrão.</p><p>para economizar, aposte na entrega econômica, mas esteja ciente de que ela leva mais tempo. a quantidade exata de dias varia conforme a região informada no nosso site.</p>"
+    },
+    {
+      "question": "dá para comprar um produto lançado pela shoulder sem estar no brasil?",
+      "answer": "sim! nossa loja virtual entrega em diferentes países. apenas considere que os custos de envio podem variar dependendo da região."
+    },
+    {
+      "question": "quais são as medidas dos produtos lançados pela shoulder?",
+      "answer": "fornecemos as medidas nas páginas de cada produto. se você tiver alguma dúvida, por favor, entre em contato conosco e escolha os modelos ideais!"
+    }
+  ]
+} 
