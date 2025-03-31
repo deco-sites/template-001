@@ -11,6 +11,7 @@ import WishlistButton from "../wishlist/WishlistButton.tsx";
 import AddToCartButton from "./AddToCartButton.tsx";
 import { Ring } from "./ProductVariantSelector.tsx";
 import { useId } from "../../sdk/useId.ts";
+import { CardConfig } from "../search/SearchResult.tsx";
 
 interface Props {
   product: Product;
@@ -24,10 +25,12 @@ interface Props {
   index?: number;
 
   class?: string;
+
+  cardConfig?: CardConfig;
 }
 
-const WIDTH = 287;
-const HEIGHT = 287;
+const WIDTH = 427;
+const HEIGHT = 602;
 const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
 
 function ProductCard({
@@ -35,6 +38,7 @@ function ProductCard({
   preload,
   itemListName,
   index,
+  cardConfig,
   class: _class,
 }: Props) {
   const id = useId();
@@ -75,13 +79,11 @@ function ProductCard({
   return (
     <div
       {...event}
-      class={clx("card card-compact group text-sm", _class)}
+      class={clx("card card-compact group text-sm rounded-none", _class)}
     >
       <figure
         class={clx(
-          "relative bg-base-200",
-          "rounded border border-transparent",
-          "group-hover:border-primary",
+          "relative bg-base-200"
         )}
         style={{ aspectRatio: ASPECT_RATIO }}
       >
@@ -104,7 +106,7 @@ function ProductCard({
             style={{ aspectRatio: ASPECT_RATIO }}
             class={clx(
               "object-cover",
-              "rounded w-full",
+              "w-full",
               "col-span-full row-span-full",
             )}
             sizes="(max-width: 640px) 50vw, 20vw"
@@ -120,7 +122,7 @@ function ProductCard({
             style={{ aspectRatio: ASPECT_RATIO }}
             class={clx(
               "object-cover",
-              "rounded w-full",
+              "w-full",
               "col-span-full row-span-full",
               "transition-opacity opacity-0 lg:group-hover:opacity-100",
             )}
@@ -153,13 +155,13 @@ function ProductCard({
           </span>
         </div>
 
-        <div class="absolute bottom-0 right-0">
+        <div class="absolute top-0 right-0">
           <WishlistButton item={item} variant="icon" />
         </div>
       </figure>
 
-      <a href={relativeUrl} class="pt-5">
-        <span class="font-medium">
+      <a href={relativeUrl} class=" flex  gap-2 justify-between items-center">
+        <span class="font-light text-[10px]/[12px] lg:text-sm/[17px]">
           {title}
         </span>
 
@@ -169,14 +171,14 @@ function ProductCard({
               {formatPrice(listPrice, offers?.priceCurrency)}
             </span>
           )}
-          <span class="font-medium text-base-400">
+          <span class="font-light text-[10px]/[12px] lg:text-sm/[17px]">
             {formatPrice(price, offers?.priceCurrency)}
           </span>
         </div>
       </a>
 
       {/* SKU Selector */}
-      {variants.length > 1 && firstVariantName !== shoeSizeVariant && (
+      {variants.length > 1 && firstVariantName !== shoeSizeVariant && cardConfig?.cardSkuShow && (
         <ul class="flex items-center justify-start gap-2 pt-4 pb-1 pl-1 overflow-x-auto">
           {variants.map(([value, link]) => [value, relative(link)] as const)
             .map(([value, link]) => (
@@ -206,7 +208,7 @@ function ProductCard({
               item={item}
               class={clx(
                 "btn",
-                "btn-outline justify-start border-none !text-sm !font-medium px-0 no-animation w-full",
+                "btn-outline justify-end border-none max-lg:!underline !text-[10px] lg:!text-sm !font-medium px-0 no-animation w-full",
                 "hover:!bg-transparent",
                 "disabled:!bg-transparent disabled:!opacity-50",
                 "btn-primary hover:!text-primary disabled:!text-primary",
@@ -218,7 +220,7 @@ function ProductCard({
               href={relativeUrl}
               class={clx(
                 "btn",
-                "btn-outline justify-start border-none !text-sm !font-medium px-0 no-animation w-full",
+                "btn-outline justify-end border-none !text-sm !font-medium px-0 no-animation w-full",
                 "hover:!bg-transparent",
                 "disabled:!bg-transparent disabled:!opacity-75",
                 "btn-error hover:!text-error disabled:!text-error",

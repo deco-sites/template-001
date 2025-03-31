@@ -1,7 +1,7 @@
 import type { ProductListingPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductCard from "../../components/product/ProductCard.tsx";
-import Filters from "../../components/search/Filters.tsx";
+import Filters, { FilterSelectedValues } from "../../components/search/Filters.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
@@ -19,6 +19,17 @@ export interface Layout {
    */
   pagination?: "show-more" | "pagination";
 }
+
+export interface CardConfig {
+  
+  /** 
+   * @title Exibir SKU selector 
+   * @default false
+  */
+  cardSkuShow?: boolean;
+  
+}
+
 export interface Props {
   /** @title Integration */
   page: ProductListingPage | null;
@@ -27,6 +38,8 @@ export interface Props {
   startingPage?: 0 | 1;
   /** @hidden */
   partial?: "hideMore" | "hideLess";
+  /** @title Card Config */
+  cardConfig: CardConfig;
 }
 function NotFound() {
   return (
@@ -49,7 +62,7 @@ const useUrlRebased = (overrides: string | undefined, base: string) => {
   return url;
 };
 function PageResult(props: SectionProps<typeof loader>) {
-  const { layout, startingPage = 0, url, partial } = props;
+  const { layout,cardConfig, startingPage = 0, url, partial } = props;
   const page = props.page!;
   const { products, pageInfo } = page;
   const perPage = pageInfo?.recordPerPage || products.length;
@@ -67,7 +80,7 @@ function PageResult(props: SectionProps<typeof loader>) {
   });
   const infinite = layout?.pagination !== "pagination";
   return (
-    <div class="grid grid-flow-row grid-cols-1 place-items-center">
+    <div class="grid grid-flow-row grid-cols-1 place-items-center lg:px-[30px] lg:mt-[60px]">
       <div
         class={clx(
           "pb-2 sm:pb-10",
@@ -92,17 +105,18 @@ function PageResult(props: SectionProps<typeof loader>) {
         class={clx(
           "grid items-center",
           "grid-cols-2 gap-2",
-          "sm:grid-cols-4 sm:gap-10",
+          "sm:grid-cols-4 sm:gap-0",
           "w-full",
         )}
       >
         {products?.map((product, index) => (
           <ProductCard
+            cardConfig={cardConfig}
             key={`product-card-${product.productID}`}
             product={product}
             preload={index === 0}
             index={offset + index}
-            class="h-full min-w-[160px] max-w-[300px]"
+            class="h-full min-w-[160px] max-w-[100%] p-1 lg:p-3"
           />
         ))}
       </div>
@@ -209,21 +223,28 @@ function Result(props: SectionProps<typeof loader>) {
     },
   });
   const results = (
-    <span class="text-sm font-normal">
+    <span class="text-[10px]/[12px] font-normal">
       {page.pageInfo.recordPerPage} of {page.pageInfo.records} results
-    </span>
+    </span> 
   );
   const sortBy = sortOptions.length > 0 && (
     <Sort sortOptions={sortOptions} url={url} />
   );
   return (
     <>
+    <script dangerouslySetInnerHTML={{ __html: useScript((e)=>console.log(e), props) }} />
       <div id={container} {...viewItemListEvent} class="w-full">
         {partial
           ? <PageResult {...props} />
           : (
-            <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
-              <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
+            <div class="w-full flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-1 lg:px-5 sm:px-0">
+              <div class="flex flex-col lg:flex-row justify-between items-center px-5 gap-8 lg:gap-0 pt-3 lg:pt-0">
+                <div class="flex items-center w-full lg:w-[35%] justify-center lg:justify-start px-2">
+                  <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
+                </div>
+                <p class="text-base font-semibold text-black w-full lg:w-[30%] text-center">{breadcrumb?.itemListElement?.[0]?.name}</p>
+                <p class="text-[10px]/[12px] font-medium text-[#d0cbc7] w-full lg:w-[35%] text-center lg:text-right">{results}</p>
+              </div>
 
               {device === "mobile" && (
                 <Drawer
@@ -243,40 +264,37 @@ function Result(props: SectionProps<typeof loader>) {
                       </div>
                     </div>
                   }
+                  class="flex"
                 >
-                  <div class="flex sm:hidden justify-between items-end">
-                    <div class="flex flex-col">
-                      {results}
+                  <div class="flex sm:hidden justify-between items-end w-full gap-2 mt-[12px]">
+                    <label class="btn btn-ghost w-full bg-[#433d3f] text-white max-w-[50%] rounded-none max-h-[40px] min-h-[40px]" for={controls}>
+                      filtrar
+                    </label>
+                    <div class="flex flex-col w-full max-w-[50%] border border-[#433d3f] max-h-[40px]">
                       {sortBy}
                     </div>
 
-                    <label class="btn btn-ghost" for={controls}>
-                      Filters
-                    </label>
+                    
                   </div>
                 </Drawer>
               )}
 
-              <div class="grid place-items-center grid-cols-1 sm:grid-cols-[250px_1fr]">
+              <div class="flex flex-col gap-9 w-full lg:px-[30px]">
                 {device === "desktop" && (
-                  <aside class="place-self-start flex flex-col gap-9">
-                    <span class="text-base font-semibold h-12 flex items-center">
-                      Filters
-                    </span>
-
-                    <Filters filters={filters} />
-                  </aside>
+                  <>
+                    <aside class="flex border-y border-[#c3c3c34d] gap-9 w-full justify-between items-start lg:mt-11">
+                      <Filters filters={filters} />
+                      <div class="flex justify-between items-center">
+                          {sortBy}
+                      </div>
+                    </aside>
+                    <aside class="flex gap-9 w-full justify-center items-start mt-7">
+                      <FilterSelectedValues filters={filters} />
+                    </aside>
+                  </>
                 )}
 
                 <div class="flex flex-col gap-9">
-                  {device === "desktop" && (
-                    <div class="flex justify-between items-center">
-                      {results}
-                      <div>
-                        {sortBy}
-                      </div>
-                    </div>
-                  )}
                   <PageResult {...props} />
                 </div>
               </div>

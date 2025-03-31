@@ -1,3 +1,5 @@
+import { h } from "preact";
+import type { ComponentChildren } from "preact";
 import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
@@ -10,7 +12,7 @@ import Searchbar, {
 } from "../../components/search/Searchbar/Form.tsx";
 import Drawer from "../../components/ui/Drawer.tsx";
 import Icon from "../../components/ui/Icon.tsx";
-import Modal from "../../components/ui/Modal.tsx";
+import SearchModal from "../../components/ui/SearchModal.tsx";
 import {
   HEADER_HEIGHT_DESKTOP,
   HEADER_HEIGHT_MOBILE,
@@ -22,6 +24,13 @@ import {
 } from "../../constants.ts";
 import { useDevice } from "@deco/deco/hooks";
 import { type LoadingFallbackProps } from "@deco/deco";
+
+interface DrawerAsideProps {
+  title: string;
+  drawer: string;
+  children: ComponentChildren;
+}
+
 export interface Logo {
   src: ImageWidget;
   alt: string;
@@ -50,56 +59,58 @@ export interface SectionProps {
 type Props = Omit<SectionProps, "alert">;
 const Desktop = ({ navItems, logo, searchbar, loading }: Props) => (
   <>
-    <Modal id={SEARCHBAR_POPUP_ID}>
-      <div
-        class="absolute top-0 bg-base-100 container"
-        style={{ marginTop: HEADER_HEIGHT_MOBILE }}
+    <SearchModal id={SEARCHBAR_POPUP_ID}>
+      <div 
+        class="absolute top-0 left-0 w-full bg-base-100 transform transition-transform duration-300"
       >
-        {loading === "lazy"
-          ? (
-            <div class="flex justify-center items-center">
-              <span class="loading loading-spinner" />
-            </div>
-          )
-          : <Searchbar {...searchbar} />}
+        {loading === "lazy" ? (
+          <div class="flex justify-center items-center p-8">
+            <span class="loading loading-spinner text-primary" />
+          </div>
+        ) : (
+          <div class="container py-8">
+            <Searchbar {...searchbar} />
+          </div>
+        )}
       </div>
-    </Modal>
+    </SearchModal>
 
-    <div class="flex flex-col gap-4 pt-5 container border-b border-gray-300">
-      <div class="grid grid-cols-3 place-items-center">
-        <div class="place-self-start">
-          <a href="/" aria-label="Store logo">
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={logo.width || 100}
-              height={logo.height || 23}
-            />
-          </a>
-        </div>
+    <div class="flex flex-col w-full bg-base-100">
+      <div class="w-full">
+        <div class="flex items-center justify-between relative">
+          {/* Left side - Navigation */}
+          <div className="flex-1">
+            <ul className="flex items-center gap-8 px-10">
+              {navItems?.slice(0, 5).map((item) => <NavItem key={item.name} item={item} />)}
+            </ul>
+          </div>
 
-        <label
-          for={SEARCHBAR_POPUP_ID}
-          class="input input-bordered flex items-center gap-2 w-full"
-          aria-label="search icon button"
-        >
-          <Icon id="search" />
-          <span class="text-base-400 truncate">
-            Search products, brands...
-          </span>
-        </label>
+          {/* Center - Logo */}
+          <div class="flex-1 flex justify-center">
+            <a href="/" aria-label="Store logo" class="inline-block lg:ml-[71px]">
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width || 100}
+                height={logo.height || 23}
+              />
+            </a>
+          </div>
 
-        <div class="flex gap-4 place-self-end">
-          <Bag />
-        </div>
-      </div>
-
-      <div class="flex justify-between items-center">
-        <ul class="flex">
-          {navItems?.slice(0, 10).map((item) => <NavItem item={item} />)}
-        </ul>
-        <div>
-          {/* ship to */}
+          {/* Right side - CTAs */}
+          <div class="flex-1 flex items-center justify-end gap-8 px-8">
+            <label
+              for={SEARCHBAR_POPUP_ID}
+              class="text-primary hover:text-secondary cursor-pointer text-sm"
+              aria-label="search icon button"
+            >
+              {/* <Icon id="search" size={24} /> */}
+              Buscar
+            </label>
+            <a href="/sacola" class="text-primary  cursor-pointer text-sm">Conta</a>
+            <a href="/account" class="text-primary  cursor-pointer text-sm">Favoritos</a>
+            <Bag />
+          </div>
         </div>
       </div>
     </div>
@@ -143,7 +154,7 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => (
     />
 
     <div
-      class="grid place-items-center w-screen px-5 gap-4"
+      class="grid place-items-center w-screen px-3 lg:px-5 gap-1"
       style={{
         height: NAVBAR_HEIGHT_MOBILE,
         gridTemplateColumns:
@@ -152,16 +163,18 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => (
     >
       <label
         for={SIDEMENU_DRAWER_ID}
-        class="btn btn-square btn-sm btn-ghost"
+        class="btn btn-square btn-sm btn-ghost flex flex-col gap-1 justify-center items-center pb-2"
         aria-label="open menu"
       >
-        <Icon id="menu" />
+        {/* <Icon id="menu" /> */}
+        <div class="w-[32px] h-[1px] bg-primary mb-1"></div>
+        <div class="w-[32px] h-[1px] bg-primary"></div>
       </label>
 
       {logo && (
         <a
           href="/"
-          class="flex-grow inline-flex items-center justify-center"
+          class="flex-grow inline-flex items-center justify-center max-w-[100px] h-auto ml-4"
           style={{ minHeight: NAVBAR_HEIGHT_MOBILE }}
           aria-label="Store logo"
         >
@@ -199,6 +212,7 @@ function Header({
   const device = useDevice();
   return (
     <header
+    class="relative"
       style={{
         height: device === "desktop"
           ? HEADER_HEIGHT_DESKTOP
@@ -219,3 +233,4 @@ export const LoadingFallback = (props: LoadingFallbackProps<Props>) => (
   <Header {...props as any} loading="lazy" />
 );
 export default Header;
+

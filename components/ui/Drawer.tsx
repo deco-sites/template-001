@@ -38,7 +38,7 @@ function Drawer(
           aria-label={open ? "open drawer" : "closed drawer"}
         />
 
-        <div class="drawer-content">
+        <div class="drawer-content w-full">
           {children}
         </div>
 

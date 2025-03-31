@@ -110,7 +110,7 @@ function AddToCartButton(props: Props) {
   return (
     <div
       id={id}
-      class="flex"
+      class="flex group"
       data-item-id={product.productID}
       data-cart-item={encodeURIComponent(
         JSON.stringify({ item, platformProps }),
@@ -120,10 +120,10 @@ function AddToCartButton(props: Props) {
 
       <button
         disabled
-        class={clx("flex-grow peer-checked:hidden", _class?.toString())}
+        class={clx("flex-grow peer-checked:hidden lg:opacity-0 transition-opacity duration-300 group-hover:opacity-100 hover:underline min-h-[20px] max-h-[20px] mt-2", _class?.toString())}
         hx-on:click={useScript(onClick)}
       >
-        Add to Cart
+        Adicionar à sacola
       </button>
 
       {/* Quantity Input */}

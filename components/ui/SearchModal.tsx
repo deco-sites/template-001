@@ -17,13 +17,13 @@ const script = (id: string) => {
     }
     input.checked = false;
   };
-  addEventListener("keydown", handler);
+  addEventListener("keydown", handler); 
 };
-function Modal({ children, open, id = useId() }: Props) {
+function SearchModal({ children, open, id = useId() }: Props) {
   return (
     <>
       <input id={id} checked={open} type="checkbox" class="modal-toggle" />
-      <div class="modal bg-transparent absolute top-[100%] left-0 w-full"> 
+      <div class="modal bg-[#fffdf4_!important] absolute top-[100%] left-0 w-full h-screen">
         {children}
         <label class="modal-backdrop" for={id}>Close</label>
       </div>
@@ -34,4 +34,4 @@ function Modal({ children, open, id = useId() }: Props) {
     </>
   );
 }
-export default Modal;
+export default SearchModal;

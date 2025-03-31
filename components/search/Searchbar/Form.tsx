@@ -61,29 +61,20 @@ const script = (formId: string, name: string, popupId: string) => {
 };
 const Suggestions = import.meta.resolve("./Suggestions.tsx");
 export default function Searchbar(
-  { placeholder = "What are you looking for?", loader }: SearchbarProps,
+  { placeholder = "Oque você procura?", loader }: SearchbarProps,
 ) {
   const slot = useId();
   return (
     <div
-      class="w-full grid gap-8 px-4 py-6"
+      class="w-full grid gap-8 px-0 py-6 max-w-[1140px] mx-auto"
       style={{ gridTemplateRows: "min-content auto" }}
     >
-      <form id={SEARCHBAR_INPUT_FORM_ID} action={ACTION} class="join">
-        <button
-          type="submit"
-          class="btn join-item btn-square no-animation"
-          aria-label="Search"
-          for={SEARCHBAR_INPUT_FORM_ID}
-          tabIndex={-1}
-        >
-          <span class="loading loading-spinner loading-xs hidden [.htmx-request_&]:inline" />
-          <Icon id="search" class="inline [.htmx-request_&]:hidden" />
-        </button>
+      <form id={SEARCHBAR_INPUT_FORM_ID} action={ACTION} class="join border-b border-[#433d3f]">
+        
         <input
           autoFocus
           tabIndex={0}
-          class="input input-bordered join-item flex-grow"
+          class="input join-item flex-grow border-none text-xs font-light h-10 min-h-10 focus:border-none focus:outline-none"
           name={NAME}
           placeholder={placeholder}
           autocomplete="off"
@@ -95,9 +86,19 @@ export default function Searchbar(
           hx-indicator={`#${SEARCHBAR_INPUT_FORM_ID}`}
           hx-swap="innerHTML"
         />
+        <button
+          type="submit"
+          class="btn join-item btn-square no-animation bg-transparent border-none shadow-none h-10 min-h-10 w-10 min-w-10 opacity-70"
+          aria-label="Search"
+          for={SEARCHBAR_INPUT_FORM_ID}
+          tabIndex={-1}
+        >
+          <span class="loading loading-spinner loading-xs hidden [.htmx-request_&]:inline" />
+          <Icon id="search" class="inline [.htmx-request_&]:hidden opacity-80" size={18} />
+        </button>
         <label
           type="button"
-          class="join-item btn btn-ghost btn-square hidden sm:inline-flex no-animation"
+          class="join-item btn btn-ghost btn-square hidden sm:inline-flex no-animation absolute right-0 top-0"
           for={SEARCHBAR_POPUP_ID}
           aria-label="Toggle searchbar"
         >

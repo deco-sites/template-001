@@ -24,6 +24,56 @@
   }
 }
 
+@layer components {
+  /* Submenu styles */
+  .submenu {
+    top: 100%;
+    z-index: 40;
+    /* transform: translateY(8px); */
+    /* transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); */
+  }
+
+  .group:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+    /* transform: translateY(0); */
+  }
+
+  /* Custom scrollbar for submenu */
+  .submenu::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .submenu::-webkit-scrollbar-track {
+    background: var(--fallback-b2,oklch(var(--b2)));
+  }
+
+  .submenu::-webkit-scrollbar-thumb {
+    background: var(--fallback-secondary,oklch(var(--s)));
+    border-radius: 3px;
+  }
+
+  #searchbar-popup:checked + .modal {
+    animation: progress-search-modal 0.5s ease-in-out;
+  }
+
+  .breadcrumbs {
+    overflow: hidden;
+  }
+
+  .breadcrumbs > ul > li + *:before, .breadcrumbs > ol > li + *:before {
+    content: "/";
+    transform: none;
+    border: none;
+    width: auto;
+    height: auto;
+    font-size: 14px;
+    font-weight: 500;
+    color: #aca9a6;
+    margin: 0 5px;
+  }
+}
+
 .group:disabled .group-disabled\:animate-progress {
   animation: progress-frame ease normal
 }
@@ -35,5 +85,17 @@
 
   to {
     --dot-progress: 100%
+  }
+}
+
+@keyframes progress-search-modal {
+  0% {
+    height: 30vh;
+    opacity: 0;
+  }
+
+  to {
+    height: 100vh;
+    opacity: 1;
   }
 }

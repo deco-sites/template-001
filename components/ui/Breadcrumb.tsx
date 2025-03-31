@@ -8,8 +8,8 @@ interface Props {
 function Breadcrumb({ itemListElement = [] }: Props) {
   const items = [{ name: "Home", item: "/" }, ...itemListElement];
 
-  return (
-    <div class="breadcrumbs py-0 text-xs font-normal text-base-400">
+  return ( 
+    <div class="breadcrumbs py-0 text-xs font-medium text-[#d0cbc7]">  
       <ul>
         {items
           .filter(({ name, item }) => name && item)

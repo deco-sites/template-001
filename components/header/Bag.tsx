@@ -10,11 +10,11 @@ const onLoad = (id: string) =>
       return;
     }
     // Set minicart items count on header
-    if (count === 0) {
-      counter.classList.add("hidden");
-    } else {
-      counter.classList.remove("hidden");
-    }
+    // if (count === 0) {
+    //   counter.classList.add("hidden");
+    // } else {
+    //   counter.classList.remove("hidden");
+    // }
     counter.innerText = count > 9 ? "9+" : count.toString();
   });
 function Bag() {
@@ -27,8 +27,9 @@ function Bag() {
           class="hidden indicator-item badge badge-primary badge-sm font-thin"
         />
 
-        <span class="btn btn-square btn-sm btn-ghost no-animation">
-          <Icon id="shopping_bag" />
+        <span class="text-primary cursor-pointer text-sm hidden lg:block">
+          {/* <Icon id="shopping_bag" /> */}
+          Sacola
         </span>
       </label>
       <script

@@ -1,7 +1,7 @@
 import type { ImageObject } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import Icon from "../../components/ui/Icon.tsx";
-import Modal from "../../components/ui/Modal.tsx";
+import SearchModal from "../ui/SearchModal.tsx";
 import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
 
@@ -16,7 +16,7 @@ function ProductImageZoom({ images, width, height, id = useId() }: Props) {
   const container = `${id}-container`;
 
   return (
-    <Modal id={id}>
+    <SearchModal id={id}>
       <div
         id={container}
         class="modal-box w-11/12 max-w-7xl grid grid-cols-[48px_1fr_48px] grid-rows-1 place-items-center"
@@ -48,7 +48,7 @@ function ProductImageZoom({ images, width, height, id = useId() }: Props) {
         </Slider.NextButton>
       </div>
       <Slider.JS rootId={container} />
-    </Modal>
+    </SearchModal>
   );
 }
 

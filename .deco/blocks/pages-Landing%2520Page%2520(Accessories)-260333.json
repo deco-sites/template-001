@@ -1,6 +1,6 @@
 {
-  "name": "Landing Page (Accessories)",
-  "path": "/accessories",
+  "name": "Landing Page (Novo)",
+  "path": "/novo",
   "sections": [
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
@@ -34,7 +34,10 @@
           "variant": "aside",
           "pagination": "show-more"
         },
-        "startingPage": 1
+        "startingPage": 1,
+        "cardConfig": {
+          "cardSkuShow": false
+        }
       }
     },
     {
